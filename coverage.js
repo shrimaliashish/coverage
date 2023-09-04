@@ -22,7 +22,7 @@ This example demonstrates how to generate an HTML table from JSON data using Jav
 4. Populate the table rows and cells with data from the JSON object.
 5. Append the table to the container element.
 
-\`\`\`html
+html
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,9 +67,7 @@ This example demonstrates how to generate an HTML table from JSON data using Jav
     </script>
 </body>
 </html>
-\`\`\`
 
-Replace the \`jsonData\` variable with your JSON data, and this code will generate an HTML table dynamically based on the JSON structure. This example assumes that the JSON data is an array of objects, where each object represents a row, and the object properties represent the table columns.
 `;
 
   return html;
