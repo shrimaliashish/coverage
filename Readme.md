@@ -1,25 +1,37 @@
-# JSON to HTML Table
-
-This example demonstrates how to generate an HTML table from JSON data using JavaScript.
-
-## Usage
-
-1. Create an HTML container element (e.g., a `<div>`) to hold the table.
-2. Parse the JSON data into a JavaScript object.
-3. Generate the HTML table structure using JavaScript.
-4. Populate the table rows and cells with data from the JSON object.
-5. Append the table to the container element.
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <title>JSON to HTML Table</title>
 </head>
 <body>
-    <h2>Hello world</h2>
+    <div id="table-container"></div>
+    <script>
+    const jsonData = JSON.stringify([object Object],[object Object],[object Object], null, 4);
+
+    const container = document.getElementById("table-container");
+    const table = document.createElement("table");
+    table.border = "1"; 
+    const headerRow = table.insertRow(0);
+
+    for (const key in data[0]) {
+        if (data[0].hasOwnProperty(key)) {
+            const headerCell = headerRow.insertCell(-1);
+            headerCell.textContent = key;
+        }
+    }
+
+    for (let i = 0; i < data.length; i++) {
+        const dataRow = table.insertRow(-1);
+        for (const key in data[i]) {
+            if (data[i].hasOwnProperty(key)) {
+                const cell = dataRow.insertCell(-1);
+                cell.textContent = data[i][key];
+            }
+        }
+    }
+
+    container.appendChild(table);
+</script>
 </body>
 </html>
