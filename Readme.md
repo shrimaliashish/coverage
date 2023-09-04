@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +10,7 @@
 
     const container = document.getElementById("table-container");
     const table = document.createElement("table");
-    table.border = "1"; 
+    table.border = "1";
     const headerRow = table.insertRow(0);
 
     for (const key in data[0]) {
@@ -32,6 +31,23 @@
     }
 
     container.appendChild(table);
+
 </script>
 </body>
 </html>
+# Generated HTML from "output.html"
+
+<!DOCTYPE html>
+  <html>
+  <head>
+      <title>JSON to HTML Table</title>
+  </head>
+  <body>
+  
+<script>
+    console.log("hello")
+  </script>
+  
+  
+  </body>
+  </html>
