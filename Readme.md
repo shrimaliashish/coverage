@@ -45,7 +45,7 @@
   <body>
   
 <script>
-    console.log("hello")
+    console.log("hello world")
   </script>
   
   
