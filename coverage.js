@@ -55,42 +55,15 @@ function generateHTMLTable(data) {
   return html;
 }
 
-const htmlContent = generateHTMLTable(data);
+// Function to write HTML content to a file
+function writeHTMLToFile(fileName, content) {
+  fs.writeFileSync(fileName, content);
+  console.log(`${fileName} file created successfully.`);
+}
 
-// Write the HTML content to a file
-fs.writeFileSync("output.html", htmlContent);
+// Usage: Replace these variables with your own data and file name
+const outputFileName = "Readme.md";
+const readmeContent = generateHTMLTable(data);
 
-console.log("HTML file created successfully.");
-
-// Read the content from "output.html"
-fs.readFile("output.html", "utf8", (err, htmlContent) => {
-  if (err) {
-    console.error('Error reading "output.html":', err);
-    return;
-  }
-
-  // Prepare the content for the README.md file
-  const readmeContent = `
-# Generated HTML from "output.html"
-
-${htmlContent}
-`;
-
-  // Write the content to "README.md"
-  fs.writeFileSync("Fun.md", readmeContent);
-
-  console.log("README.md file created successfully.");
-});
-
-// // Function to write HTML content to a file
-// function writeHTMLToFile(fileName, content) {
-//   fs.writeFileSync(fileName, content);
-//   console.log(`${fileName} file created successfully.`);
-// }
-
-// // Usage: Replace these variables with your own data and file name
-// const outputFileName = "Readme.md";
-// const readmeContent = generateHTMLTable(data);
-
-// // Write the generated HTML to a file
-// writeHTMLToFile(outputFileName, readmeContent);
+// Write the generated HTML to a file
+writeHTMLToFile(outputFileName, readmeContent);
